@@ -30,8 +30,6 @@ public abstract class Conta {
         this.extrato = new ArrayList<>();
         this.numeroCartao = this.gerarNumeroCartao();
         registrarMovimento("║ Conta criada com sucesso!");
-
-
     }
 
     public int getNumeroConta() {
@@ -93,7 +91,12 @@ public abstract class Conta {
         Banco.intervalo();
     }
 
-    public void sacar() {
+
+    public abstract boolean sacar();
+
+    /*
+
+    public void saca1r() {
         double valorSaque;
         System.out.println("\n╔═════════════════════════════════════════════╗");
         System.out.println("║                    SAQUE                    ║");
@@ -115,6 +118,8 @@ public abstract class Conta {
         System.out.println("╚═════════════════════════════════════════════╝");
         Banco.intervalo();
     }
+     * 
+     */
 
     public void transferir() {
         int numeroContaDestinatario;
@@ -158,7 +163,7 @@ public abstract class Conta {
         Banco.intervalo();
     }
 
-    private void registrarMovimento(String descricao) {
+    public void registrarMovimento(String descricao) {
         extrato.add(descricao);
     }
 

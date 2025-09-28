@@ -164,5 +164,10 @@ public class ContaInvestimento extends Conta {
         double porcentagem = min + (max - min) * random.nextDouble();
         return this.getSaldo() - valorInvestido + valorInvestido + (valorInvestido * porcentagem);
     }
+
+    @Override
+    public boolean sacar() {
+        throw new UnsupportedOperationException("Unimplemented method 'sacar'");
+    }
 }
 
